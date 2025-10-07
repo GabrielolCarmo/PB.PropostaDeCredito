@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <Reference Include="PB.Commons.Infra.Kernel">
-      <HintPath>..\..\..\..\PB.Clientes\dependencies\PB.Commons.Infra.Kernel.dll</HintPath>
+      <HintPath>..\..\..\dependencies\PB.Commons.Infra.Kernel.dll</HintPath>
     </Reference>
   </ItemGroup>
 

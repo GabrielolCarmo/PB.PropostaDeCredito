@@ -6,4 +6,23 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.5.4" />
+    <PackageReference Include="MediatR" Version="13.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\domain\PB.PropostaDeCredito.Domain\PB.PropostaDeCredito.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PB.Commons.Api">
+      <HintPath>..\..\..\dependencies\PB.Commons.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="PB.Commons.Infra.Kernel">
+      <HintPath>..\..\..\dependencies\PB.Commons.Infra.Kernel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
