@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="13.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PB.Commons.Infra.Kernel">
+      <HintPath>..\..\..\..\PB.Clientes\dependencies\PB.Commons.Infra.Kernel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
