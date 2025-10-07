@@ -16,7 +16,7 @@ namespace PB.PropostaDeCredito.Domain.PropostasDeCredito
 
         public int Score { get; private set; }
 
-        public decimal CreditoDisponivel { get; set; }
+        public decimal CreditoDisponivel { get; private set; }
 
         public void RealizaAnalizaDeCredito()
         {

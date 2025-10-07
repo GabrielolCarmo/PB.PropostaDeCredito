@@ -5,21 +5,18 @@ namespace PB.PropostaDeCredito.Infra.Data.Context
 {
     public class PBPropostaDeCreditoDBContext(DbContextOptions<PBPropostaDeCreditoDBContext> opt) : DbContext(opt)
     {
-        public class PBClientesDBContext(DbContextOptions<PBClientesDBContext> opt) : DbContext(opt)
+        public readonly DbContextOptions<PBPropostaDeCreditoDBContext> _opt = opt;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            public readonly DbContextOptions<PBClientesDBContext> _opt = opt;
+            modelBuilder.ApplyConfiguration(new PropostaCreditoMap());
+            base.OnModelCreating(modelBuilder);
+        }
 
-            protected override void OnModelCreating(ModelBuilder modelBuilder)
-            {
-                modelBuilder.ApplyConfiguration(new PropostaCreditoMap());
-                base.OnModelCreating(modelBuilder);
-            }
-
-            public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
-            {
-                ChangeTracker.DetectChanges();
-                return base.SaveChangesAsync(cancellationToken);
-            }
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            ChangeTracker.DetectChanges();
+            return base.SaveChangesAsync(cancellationToken);
         }
     }
 }
