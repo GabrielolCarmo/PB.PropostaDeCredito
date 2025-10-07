@@ -2,6 +2,9 @@
 
 namespace PB.PropostaDeCredito.Domain.PropostasDeCredito.Events
 {
+    /// <summary>
+    /// Evento de domínio disparado quando o crédito é disponibilizado para uma proposta.
+    /// </summary>
     public class CreditoDisponibilizadoEvent(PropostaCredito proposta) : IDomainEvent
     {
         public Guid AggregateRootId { get; } = proposta.Id;

@@ -10,6 +10,10 @@ namespace PB.PropostaDeCredito.Api.Consumers
         private readonly MediatR.IMediator _mediator = mediator;
         private readonly IUnityOfWork _uow = uow;
 
+        /// <summary>
+        /// Consome a mensagem de novo cliente criado, mapeando para o comando que gera uma nova proposta de crédito.
+        /// </summary>
+        /// <param name="context">Contexto da mensagem recebida.</param>
         public async Task Consume(ConsumeContext<NovoClienteCriadoMessage> context)
         {
             var message = context.Message;
